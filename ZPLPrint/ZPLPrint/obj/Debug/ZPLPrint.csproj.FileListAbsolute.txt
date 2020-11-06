@@ -1,0 +1,15 @@
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\bin\Debug\ZPLPrint.exe.config
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\bin\Debug\ZPLPrint.exe
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\bin\Debug\ZPLPrint.pdb
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.csprojAssemblyReference.cache
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\MainWindow.g.cs
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\App.g.cs
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint_MarkupCompile.cache
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint_MarkupCompile.lref
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\MainWindow.baml
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.g.resources
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.Properties.Resources.resources
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.csproj.GenerateResource.cache
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.csproj.CoreCompileInputs.cache
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.exe
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.pdb
