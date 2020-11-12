@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZPLPrint"
         mc:Ignorable="d"
-        Title="ZPLPrint" Height="400" Width="600">
+        Title="ZPLPrint" Height="400" Width="600" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3"/>
@@ -35,13 +35,56 @@
         <TextBlock Grid.Column="1" Grid.Row="6" Text="검사일" TextAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
         <TextBlock Grid.Column="1" Grid.Row="7" Text="검사자" TextAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
         <TextBlock Grid.Column="1" Grid.Row="8" Text="프린트 IP" TextAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
-        
-        <TextBox Grid.Column="2" Grid.Row="1" x:Name="manufacturer" Margin="1" Padding="1"  VerticalContentAlignment="Center" FontSize="20" Text="동진이공"/>
-        <TextBox Grid.Column="2" Grid.Row="2" x:Name="car" Margin="1" Padding="1"  VerticalContentAlignment="Center" FontSize="20" Text="LX2"/>
-        <TextBox Grid.Column="2" Grid.Row="3" x:Name="productName" Margin="1" Padding="1"  VerticalContentAlignment="Center" FontSize="20" Text="F2N"/>
-        <TextBox Grid.Column="2" Grid.Row="4" x:Name="ALC" Margin="1" Padding="1"  VerticalContentAlignment="Center" FontSize="20" Text="84260-S8010NNB"/>
+
+        <TextBlock Grid.Column="2" Grid.Row="1" x:Name="manufacturer" Margin="1" Padding="1"  VerticalAlignment="Center" FontSize="20" Text="동진이공"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" x:Name="car" Margin="1" Padding="1"  VerticalAlignment="Center" FontSize="20" Text="LX2"/>
+        <ComboBox Grid.Column="2" Grid.Row="3" x:Name="productName" Margin="1" Padding="1"  VerticalContentAlignment="Center" FontSize="20" SelectionChanged="productName_SelectionChanged">
+            <ComboBoxItem Content="F1N"/>
+            <ComboBoxItem Content="F1R"/>
+            <ComboBoxItem Content="F1W"/>
+            <ComboBoxItem Content="F2N"/>
+            <ComboBoxItem Content="F2R"/>
+            <ComboBoxItem Content="F2W"/>
+            <ComboBoxItem Content="F3N"/>
+            <ComboBoxItem Content="F3R"/>
+            <ComboBoxItem Content="F3W"/>
+            <ComboBoxItem Content="F4N"/>
+            <ComboBoxItem Content="F4R"/>
+            <ComboBoxItem Content="F4W"/>
+            <ComboBoxItem Content="F5N"/>
+            <ComboBoxItem Content="F5R"/>
+            <ComboBoxItem Content="F5W"/>
+            <ComboBoxItem Content="F6N"/>
+            <ComboBoxItem Content="F6R"/>
+            <ComboBoxItem Content="F6W"/>
+            <ComboBoxItem Content="F7N"/>
+            <ComboBoxItem Content="F7R"/>
+            <ComboBoxItem Content="F7W"/>
+            <ComboBoxItem Content="F8N"/>
+            <ComboBoxItem Content="F8R"/>
+            <ComboBoxItem Content="F8W"/>
+            <ComboBoxItem Content="F9N"/>
+            <ComboBoxItem Content="F9R"/>
+            <ComboBoxItem Content="F9W"/>
+            <ComboBoxItem Content="FAN"/>
+            <ComboBoxItem Content="FAR"/>
+            <ComboBoxItem Content="FAW"/>
+            <ComboBoxItem Content="FDN"/>
+            <ComboBoxItem Content="FDR"/>
+            <ComboBoxItem Content="FDW"/>
+            <ComboBoxItem Content="FEN"/>
+            <ComboBoxItem Content="FER"/>
+            <ComboBoxItem Content="FEW"/>
+            <ComboBoxItem Content="FFN"/>
+            <ComboBoxItem Content="FFR"/>
+            <ComboBoxItem Content="FFW"/>
+            <ComboBoxItem Content="FGN"/>
+            <ComboBoxItem Content="FGR"/>
+            <ComboBoxItem Content="FGW"/>
+        </ComboBox>
+        <TextBlock Grid.Column="2" Grid.Row="4" x:Name="ALC" Margin="1" Padding="1"  VerticalAlignment="Center" FontSize="20"/>
         <TextBox Grid.Column="2" Grid.Row="5" x:Name="LOT" Margin="1" Padding="1"  VerticalContentAlignment="Center" FontSize="20" Text="0001"/>
-        <TextBox Grid.Column="2" Grid.Row="6" x:Name="inspectionDate" Margin="1" Padding="1"  VerticalContentAlignment="Center" FontSize="20" Text="20201101"/>
+        <TextBox Grid.Column="2" Grid.Row="6" x:Name="inspectionDate" Margin="1" Padding="1"  VerticalContentAlignment="Center" FontSize="20"/>
         <TextBox Grid.Column="2" Grid.Row="7" x:Name="inspector" Margin="1" Padding="1"  VerticalContentAlignment="Center" FontSize="20" Text="황재욱"/>
         <TextBox Grid.Column="2" Grid.Row="8" x:Name="printIP" Margin="1" Padding="1"  VerticalContentAlignment="Center" FontSize="20" Text="192.168.0.16"/>
         <Button Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" Content="ZPL 프린트" FontSize="30" Click="ZPLPrint_Click"/>
