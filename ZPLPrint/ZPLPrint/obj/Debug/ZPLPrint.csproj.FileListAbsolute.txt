@@ -13,3 +13,5 @@ C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.csproj.GenerateReso
 C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.csproj.CoreCompileInputs.cache
 C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.exe
 C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.pdb
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\PasswordControl.g.cs
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\PasswordControl.baml
