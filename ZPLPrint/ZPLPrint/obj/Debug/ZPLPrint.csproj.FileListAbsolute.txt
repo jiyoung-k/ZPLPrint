@@ -15,3 +15,7 @@ C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.exe
 C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.pdb
 C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\PasswordControl.g.cs
 C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\PasswordControl.baml
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\bin\Debug\ZPLPrint.exe.manifest
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\bin\Debug\ZPLPrint.application
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.exe.manifest
+C:\NeuronAware\ZPLPrint\ZPLPrint\ZPLPrint\obj\Debug\ZPLPrint.application

@@ -26,18 +26,18 @@ namespace ZPLPrint
 
         public string product;
         private readonly PasswordControl PasswordControl = new PasswordControl();
-        Window window;
+        private bool PasswordSucceeded = false;
+        Window window = new Window();
         public MainWindow()
         {
             InitializeComponent();
             inspectionDate.Text = System.DateTime.Now.ToString("yyyyMMdd");
-            PasswordControl.Succeeded += OnZPLPrint;
-            PasswordControl.Cancelled += OnPasswordClosed;
+            window.Closed += OnPasswordClosed;
+            PasswordControl.Succeeded += OnPasswordSucceeded;
         }
 
-        private void ZPLPrint_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            window = new Window();
             window.Title = "Password";
             window.Content = PasswordControl;
             window.Topmost = true;
@@ -45,6 +45,36 @@ namespace ZPLPrint
             window.Height = 100;
             window.Width = 400;
             window.ShowDialog();
+        }
+
+        private void ZPLPrint_Click(object sender, RoutedEventArgs e)
+        {
+            ZPLString = ZPLString.Replace("_car_", car.Text.ToString());
+            ZPLString = ZPLString.Replace("_productName_", product);
+            ZPLString = ZPLString.Replace("_ALC_", ALC.Text.ToString());
+            ZPLString = ZPLString.Replace("_barcode_", product);
+            ZPLString = ZPLString.Replace("_inspectionSeq_", LOT.Text.ToString());
+            ZPLString = ZPLString.Replace("_inspectionDate_", inspectionDate.Text.ToString());
+            ZPLString = ZPLString.Replace("_inspector_", inspector.Text.ToString());
+            ZPLString = ZPLString.Replace("_manufacturer_", manufacturer.Text.ToString());
+
+            try
+            {
+                TcpClient client = new TcpClient(printIP.Text, 9100);
+                Byte[] data = System.Text.Encoding.UTF8.GetBytes(ZPLString);
+
+                NetworkStream stream = client.GetStream();
+                stream.Write(data, 0, data.Length);
+                stream.Flush();
+
+                stream.Close();
+                client.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("프린트 에러");
+            }
 
         }
 
@@ -135,41 +165,18 @@ namespace ZPLPrint
             return barcode;
         }
 
-        private void OnZPLPrint(object sender, EventArgs e)
-        {
-            window.Close();
-            ZPLString = ZPLString.Replace("_car_", car.Text.ToString());
-            ZPLString = ZPLString.Replace("_productName_", product);
-            ZPLString = ZPLString.Replace("_ALC_", ALC.Text.ToString());
-            ZPLString = ZPLString.Replace("_barcode_", product);
-            ZPLString = ZPLString.Replace("_inspectionSeq_", LOT.Text.ToString());
-            ZPLString = ZPLString.Replace("_inspectionDate_", inspectionDate.Text.ToString());
-            ZPLString = ZPLString.Replace("_inspector_", inspector.Text.ToString());
-            ZPLString = ZPLString.Replace("_manufacturer_", manufacturer.Text.ToString());
-
-            try
-            {
-                TcpClient client = new TcpClient(printIP.Text, 9100);
-                Byte[] data = System.Text.Encoding.UTF8.GetBytes(ZPLString);
-
-                NetworkStream stream = client.GetStream();
-                stream.Write(data, 0, data.Length);
-                stream.Flush();
-
-                stream.Close();
-                client.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show("프린트 에러");
-            }
-        }
-
         private void OnPasswordClosed(object sender, EventArgs e)
         {
-            window.Close();
+            if(this.PasswordSucceeded == false)
+            {
+                this.Close();
+            }
         }
 
+        private void OnPasswordSucceeded(object sender, EventArgs e)
+        {
+            this.PasswordSucceeded = true;
+            window.Close();
+        }
     }
 }

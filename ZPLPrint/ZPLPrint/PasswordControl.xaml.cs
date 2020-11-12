@@ -21,7 +21,6 @@ namespace ZPLPrint
     public partial class PasswordControl : UserControl
     {
         public event EventHandler Succeeded;
-        public event EventHandler Cancelled;
         public PasswordControl()
         {
             InitializeComponent();
@@ -33,15 +32,24 @@ namespace ZPLPrint
             {
                 if (pass.Password.Equals("neuronaware"))
                 {
-                    pass.Password = null;
                     Succeeded?.Invoke(sender, e);
                 }
                 else
                 {
-                    Cancelled?.Invoke(sender, e);
-                    pass.Password = null;
                     MessageBox.Show("비밀번호가 일치하지 않습니다.");
                 }
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (pass.Password.Equals("neuronaware"))
+            {
+                Succeeded?.Invoke(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("비밀번호가 일치하지 않습니다.");
             }
         }
     }

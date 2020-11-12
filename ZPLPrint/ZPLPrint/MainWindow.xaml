@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZPLPrint"
         mc:Ignorable="d"
-        Title="ZPLPrint" Height="400" Width="600" WindowStartupLocation="CenterScreen">
+        Title="ZPLPrint" Height="400" Width="600" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3"/>
